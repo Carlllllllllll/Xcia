@@ -384,7 +384,7 @@ const embed = new EmbedBuilder()
 .setThumbnail(interaction.user.displayAvatarURL({ size: 2048, dynamic: true }))
 .setColor(client.config.embedColor)
 .setDescription('Timeout Use command again!'.replace("{name}", name))
-.setFooter({ text: 'RTX GAMING' })
+.setFooter({ text: 'Lazy Xmo' })
 return interaction.editReply({ embeds: [embed], components: [button] }).catch(e => { })
 
 })
