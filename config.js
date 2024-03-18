@@ -3,7 +3,7 @@ module.exports = {
   ownerID: ["1004206704994566164", ""],
   botInvite: "",
   supportServer: "",
-  mongodbURL: "mongodb+srv://xmoncraftypersonal:<password>@cluster0.sc35fvw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  mongodbURL: "mongodb+srv://debangshuchowdhury125:GwGjr72sqLzjI475@cluster0.qvtc5s8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   status: 'Xcia',
   commandsDir: './commands',
   language: "en",
