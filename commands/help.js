@@ -13,7 +13,7 @@ module.exports = {
     try {
       const musicCommandsEmbed = new EmbedBuilder()
         .setColor(client.config.embedColor) // Replace with your embed color
-        .setTitle('  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎<a:poll:1218153303993487373> **Commands** <a:poll:1218153303993487373>')
+        .setTitle('  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎<a:poll:1218153303993487373> **Commands** <a:poll:1218153303993487373>')
         .addFields(
           { name: '<a:list:1215605657856770068> Play <a:list:1215605657856770068>', value: '<a:arrow:1215601724341878815> Play A Song By Text' },
           { name: '<a:list:1215605657856770068> Stop <a:list:1215605657856770068>', value: '<a:arrow:1215601724341878815> Stops The Music' },
