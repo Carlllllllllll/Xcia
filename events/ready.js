@@ -24,7 +24,6 @@ console.log('\x1b[32m%s\x1b[0m', `|    🌼 Logged in as ${client.user.username}
 setInterval(() => client.user.setActivity({ 
   name: `Xcia`,
   type: ActivityType.Playing }), 10000);
-  client.user.setActivity('Streaming', { type: 'STREAMING', url: 'https://www.youtube.com/@raghavplayz7264' }); // Set streaming status with URL
 client.errorLog = config.errorLog
 } else {
 console.log('\x1b[36m%s\x1b[0m', `|    🍔 Error MongoDB!`)
