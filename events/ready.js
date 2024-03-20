@@ -24,7 +24,7 @@ console.log('\x1b[32m%s\x1b[0m', `|    🌼 Logged in as ${client.user.username}
 client.user.setActivity({ 
   name: `Xcia`,
   type: ActivityType.Streaming,
-  url: "https://www.youtube.com/watch?v=3FYf3IRUPQE"
+  url: "https://www.youtube.com/@raghavplayz7264"
   })
 client.errorLog = config.errorLog
 } else {
