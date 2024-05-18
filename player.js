@@ -162,7 +162,7 @@ for (let i = 0; i < pages.length; i++) {
 
     const queueEmbed = new EmbedBuilder()
         .setColor("#0099ff")
-        .setTitle(`<a:bow~1:1207744049566711910> Current Queue (Page ${i + 1}/${pages.length})`)
+        .setTitle(`<a:bow:1207744049566711910> Current Queue (Page ${i + 1}/${pages.length})`)
         .setDescription(numberedSongs);
 
     await channel.send({ embeds: [queueEmbed] });
