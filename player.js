@@ -1,6 +1,8 @@
 const { Riffy } = require("riffy");
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ActivityType } = require("discord.js");
 const { queueNames } = require("./commands/play"); 
+const fs = require("fs");
+const { Classic } = require("musicard");
 
 function initializePlayer(client) {
     const nodes = [
@@ -34,23 +36,38 @@ function initializePlayer(client) {
 
     client.riffy.on("trackStart", async (player, track) => {
         const channel = client.channels.cache.get(player.textChannel);
-
    
+        const musicard = await Classic({
+            thumbnailImage: track.info.thumbnail,
+            backgroundColor: "#070707",
+            backgroundImage: "https://cdn.discordapp.com/attachments/1220001571228880917/1220001571690123284/01.png?ex=660d5a01&is=65fae501&hm=a8cfb44844e61aa0fd01767cd363af048df28966c30d7b04a59f27fa45cf69c4&",
+            nameColor: "#21152b",
+            name: track.info.title,
+            progressColor: "#21152b",
+            progressBarColor: "#21152b",
+            author: `By ${track.info.author}`,
+            authorColor: "#21152b",
+            startTime: "0:00",
+            endTime: "4:00",
+            timeColor: "#21152b"
+        });
+    
+        fs.writeFileSync("musicard.png", musicard);
+        const details = `<a:arrow:1215601724341878815> **Title:** [${track.info.title}](${track.info.uri})\n` +
+        `<a:arrow:1215601724341878815> **Author:** ${track.info.author}\n` +
+        `<a:arrow:1215601724341878815> **Info:** The Bot Will Leave After The Song/Queue Is Ended.`
+    
         const embed = new EmbedBuilder()
-        .setColor("#0099ff")
-        .setAuthor({
-            name: 'Now Playing',
-            iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1236664581364125787/music-play.gif?ex=6638d524&is=663783a4&hm=5179f7d8fcd18edc1f7d0291bea486b1f9ce69f19df8a96303b75505e18baa3a&', 
-            url: 'https://discord.gg/P47geahQ4Z'
-        })
-        .setDescription(`<a:arrow:1215601724341878815> **Song Name:** [${track.info.title}](${track.info.uri})\n<a:arrow:1215601724341878815> **Author:** ${track.info.author}`)
-
-        .setImage(`https://cdn.discordapp.com/attachments/1004341381784944703/1165201249331855380/RainbowLine.gif?ex=663939fa&is=6637e87a&hm=e02431de164b901e07b55d8f8898ca5b1b2832ad11985cecc3aa229a7598d610&`)
-        .setThumbnail(track.info.thumbnail)
-        .setTimestamp()
-        .setFooter({ text: 'Xcia Music'}); 
-
-
+            .setColor("#21152b")
+            .setAuthor({
+                name: 'Now Playing',
+                iconURL: 'https://cdn.discordapp.com/attachments/1140841446228897932/1144671132948103208/giphy.gif', 
+                url: 'https://discord.gg/xQF9f9yUEM'
+              })
+            .setDescription(details)
+            .setImage("attachment://musicard.png")
+            .setTimestamp()
+            .setFooter({ text: 'Xcia Music'});
 
         const queueLoopButton = new ButtonBuilder()
             .setCustomId("loopQueue")
@@ -81,7 +98,7 @@ function initializePlayer(client) {
             .addComponents(queueLoopButton,  disableLoopButton, showQueueButton, clearQueueButton , skipButton);
 
        
-        const message = await channel.send({ embeds: [embed], components: [actionRow] });
+        const message = await channel.send({ embeds: [embed], components: [actionRow], files: ["musicard.png"] });
 
       
         const filter = i => i.customId === 'loopQueue' || i.customId === 'skipTrack' || i.customId === 'disableLoop' || i.customId === 'showQueue' || i.customId === 'clearQueue';
