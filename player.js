@@ -206,10 +206,11 @@ for (let i = 0; i < pages.length; i++) {
         });
     });
 
-    client.riffy.on("queueEnd", async (player) => {
-        const channel = client.channels.cache.get(player.textChannel);
-        const autoplay = false;
+client.riffy.on("queueEnd", async (player) => {
+    const channel = client.channels.cache.get(player.textChannel);
+    const autoplay = false;
 
+    setTimeout(async () => {
         if (autoplay) {
             player.autoplay(player);
         } else {
@@ -217,11 +218,11 @@ for (let i = 0; i < pages.length; i++) {
             const queueEmbed = new EmbedBuilder()
                 .setColor("#0099ff")
                 .setDescription('**Gaana Khatam Abb Mai Jata Sir**');
-               
-    
+            
             await channel.send({ embeds: [queueEmbed] });
         }
-    });
+    }, 8000);
+});
   
     function setLoop(player, loopType) {
         if (loopType === "queue") {
