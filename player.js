@@ -7,10 +7,10 @@ const { Classic } = require("musicard");
 function initializePlayer(client) {
     const nodes = [
         {
-            host: "lava-v4.ajieblogs.eu.org",
-            password: "https://dsc.gg/ajidevserver",
-            port: 443,
-            secure: true
+            host: "141.11.159.152",
+            password: "youshallnotpass",
+            port: 2343,
+            secure: false
         },
     ];
 
