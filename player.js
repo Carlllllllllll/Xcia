@@ -7,11 +7,11 @@ const { Classic } = require("musicard");
 function initializePlayer(client) {
     const nodes = [
         {
-            host: "lavalink.oryzen.xyz",
-            port: 80, 
-            password: "oryzen.xyz", 
-            secure: false
-          },
+            host: "lava-v4.ajieblogs.eu.org",
+            password: "https://dsc.gg/ajidevserver",
+            port: 443,
+            secure: true
+        },
     ];
 
     client.riffy = new Riffy(client, nodes, {
