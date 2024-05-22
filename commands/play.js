@@ -3,6 +3,8 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const queueNames = [];
 
 async function play(client, interaction) {
+    const channelId = '1242806819022307328';
+    const channel = await interaction.client.channels.fetch(channelId);
     try {
         const query = interaction.options.getString('name'); 
 
@@ -92,6 +94,7 @@ const randomIndex = Math.floor(Math.random() * embeds.length);
 
 
 await interaction.followUp({ embeds: [embeds[randomIndex]] });
+await channel.send(`${interaction.user.username} Played Smth In ${interaction.guild.name}`);
 
     } catch (error) {
         console.error('Error processing play command:', error);
