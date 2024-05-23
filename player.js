@@ -12,6 +12,12 @@ function initializePlayer(client) {
             port: 2343,
             secure: false
         },
+  {
+    host: "lavalink.oryzen.xyz",
+    port: 80, 
+    password: "oryzen.xyz", 
+     secure: false
+  },
     ];
 
     client.riffy = new Riffy(client, nodes, {
