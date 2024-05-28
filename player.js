@@ -12,6 +12,12 @@ function initializePlayer(client) {
             password: "https://dsc.gg/ajidevserver", 
             secure: false
           },
+        {
+            host: "lavalink.oryzen.xyz",
+            port: 80, 
+            password: "oryzen.xyz", 
+            secure: false
+          },
     ];
 
     client.riffy = new Riffy(client, nodes, {
