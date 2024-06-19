@@ -1,6 +1,6 @@
 module.exports = {
-  TOKEN: "MTk",
-  ownerID: ["886301232266794"], 
+  TOKEN: "",
+  ownerID: ["1126336222206365696"], 
   setupFilePath: './commands/setup.json',
   commandsDir: './commands',  
   embedColor: "00fbff",
