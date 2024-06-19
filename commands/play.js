@@ -14,10 +14,7 @@ async function play(client, interaction) {
             textChannel: interaction.channelId,
             deaf: true
         });
-
-     
         await interaction.deferReply();
-
    
         const resolve = await client.riffy.resolve({ query: query, requester: interaction.user });
         const { loadType, tracks, playlistInfo } = resolve;
