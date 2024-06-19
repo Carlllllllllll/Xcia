@@ -18,6 +18,12 @@ function initializePlayer(client) {
             password: "oryzen.xyz", 
             secure: false
           },
+          {
+            host: "va-1.riseservers.net",
+            port: 2333, 
+            password: "ilovemonkeys", 
+            secure: false
+          },
     ];
 
     client.riffy = new Riffy(client, nodes, {
