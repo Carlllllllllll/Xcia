@@ -103,7 +103,7 @@ await channel.send(`${interaction.user.username} Played Smth In ${interaction.gu
             .setTitle('Error')
             .setDescription('An error occurred while processing your request.');
 
-     
+        interaction.deferReply()
         await interaction.editReply({ embeds: [errorEmbed] });
     }
 }
