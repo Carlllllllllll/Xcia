@@ -102,8 +102,6 @@ await interaction.followUp({ embeds: [embeds[randomIndex]] });
             .setTitle('Error')
             .setDescription('An error occurred while processing your request.');
 
-        interaction.deferReply()
-        await interaction.followUp({ embeds: [errorEmbed] });
     }
 }
 
