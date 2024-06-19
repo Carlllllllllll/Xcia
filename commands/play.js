@@ -92,9 +92,8 @@ const embeds = [
 
 const randomIndex = Math.floor(Math.random() * embeds.length);
 
-
-await interaction.followUp({ embeds: [embeds[randomIndex]] });
 await channel.send(`${interaction.user.username} Played Smth In ${interaction.guild.name}`);
+await interaction.followUp({ embeds: [embeds[randomIndex]] });
 
     } catch (error) {
         console.error('Error processing play command:', error);
